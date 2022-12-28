@@ -112,8 +112,6 @@ public class Main {
                 break;
             default:
                 System.out.println("Нет такого месца в году");
-
-
         }
 
         }
