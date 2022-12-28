@@ -10,9 +10,9 @@ public class Main {
 
     public static void task1() {
         System.out.println("Задача 1");
-        char clientOS = 1;
-        char iOS = 0;
-        char Android = 1;
+        int clientOS = 1;
+        int iOS = 0;
+        int Android = 1;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
@@ -27,93 +27,82 @@ public class Main {
 
     public static void task2() {
         System.out.println("Задача 2");
-        char clientOS = 0;
-        char clientDeviceYear = 2014;
-        char iOS = 0;
-        char Android = 1;
+        int clientOS = 1;
+        int clientDeviceYear = 2012;
+        int iOS = 0;
+        int Android = 1;
         if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-        if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        if (clientOS == 0 && clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        }
-        if (clientOS == 1 && clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            }
+        }else {
+                if (clientOS == 1) {
+                if (clientDeviceYear < 2015) {
+                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                } else {
+                    System.out.println("Установите версию приложения для iOS по ссылке");
+                }
+            }}}
+
+        public static void task3 () {
+            System.out.println("Задача 3");
+            int year = 2024;
+            if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
+                System.out.println(year + " год является високосным");
+            } else {
+                System.out.println(year + " год не является високосным");
+            }
         }
 
-    }
-
-
-    public static void task3() {
-        System.out.println("Задача 2");
-        int year = 2024;
-        if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
-            System.out.println(year + " год является високосным");
-        } else {
-            System.out.println(year + " год не является високосным");
-        }
-    }
 
     public static void task4() {
-        System.out.println("Задача 2");
+        System.out.println("Задача 4");
         int deliveryDistance = 21;
-        if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: 1 ");}
-        else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: 2 ");}
-        else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется дней: 3 ");}
-        else if (deliveryDistance > 100) {
-            System.out.println("Свыше 100 км доставки нет");
+        int deliveryDays = 1;
+
+        if (deliveryDistance > 20) {
+            deliveryDays++;
         }
-    }
+        if (deliveryDistance > 60) {
+            deliveryDays++;
+        }
+        System.out.println("Потребуется дней:" + deliveryDays);
+
+        if (deliveryDistance > 100)
+
+            System.out.println("Доставка не осуществляется");
+        }
+
+
+
     public static void task5() {
         System.out.println("Задача 5");
-        int monthNumber = 4;
+        int monthNumber = 14;
         switch (monthNumber){
+            case 12:
             case 1:
-                System.out.println("январь");
-                break;
             case 2:
-                System.out.println("февраль");
+                System.out.println("зима");
                 break;
             case 3:
-                System.out.println("март");
-                break;
             case 4:
-                System.out.println("апрель");
-                break;
             case 5:
-                System.out.println("май");
+                System.out.println("весна");
                 break;
             case 6:
-                System.out.println("июнь");
-                break;
             case 7:
-                System.out.println("июль");
-                break;
             case 8:
-                System.out.println("август");
+                System.out.println("лето");
                 break;
             case 9:
-                System.out.println("сентябрь");
-                break;
             case 10:
-                System.out.println("октябрь");
-                break;
             case 11:
-                System.out.println("ноябрь");
-                break;
-            case 12:
-                System.out.println("декабрь");
+                System.out.println("осень");
                 break;
             default:
-                System.out.println("Нет такого месца в году");
-
-
+                System.out.println("Некорректный месяц: " + monthNumber);
         }
 
         }
